@@ -9,6 +9,8 @@ import { printBotInfo } from "./utils/consolePrintUsername";
 import bot from "./lib/bot";
 import helper from "./commands/helper";
 import catchAll from "./commands/catch-all";
+import { notifyEvent } from "./utils/checkEvents";
+import { schedule } from "node-cron";
 
 //Production Settings
 if (process.env.NODE_ENV === "production") {
@@ -51,6 +53,13 @@ if (process.env.NODE_ENV === "production") {
 }
 
 helper();
+//https://crontab.guru/#45_0-23_*_*_*
+schedule("14 * * * *", () => {
+  console.log(new Date());
+  console.log(new Date().toString());
+  notifyEvent();
+});
+notifyEvent();
 
 //Catch all unknown messages/commands
 catchAll();

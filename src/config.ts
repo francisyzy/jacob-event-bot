@@ -8,6 +8,8 @@ const config = {
   API_TOKEN: process.env.API_TOKEN,
   LOG_GROUP_ID: process.env.LOG_GROUP_ID,
   URL: process.env.URL,
+  eventBuffer: 5,
+  JACOB_TG_CHANNEL_ID: process.env.JACOB_TG_CHANNEL_ID || "",
 };
 
 export default config;
