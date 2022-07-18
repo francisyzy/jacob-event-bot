@@ -49,4 +49,11 @@ export async function notifyEvent(): Promise<void> {
       { parse_mode: "HTML" },
     );
   });
+  if (notifier.length === 0 && new Date().getMinutes() === 14) {
+    bot.telegram.sendMessage(
+      config.JACOB_TG_CHANNEL_ID,
+      `Jacob's Farming Contest is starting soon. <i>Unable to get crops as the <a href="https://hypixel-skyblock.fandom.com/wiki/Jacob%27s_Farming_Contest/Events">Wiki</a> is yet to be updated</i>`,
+      { parse_mode: "HTML", disable_web_page_preview: true },
+    );
+  }
 }
