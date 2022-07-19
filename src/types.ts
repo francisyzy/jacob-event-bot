@@ -6,4 +6,9 @@ interface event {
 
 interface events extends Array<event> {}
 
-export { events };
+interface fetchur {
+  day: string;
+  item: string;
+}
+
+export { events, fetchur };

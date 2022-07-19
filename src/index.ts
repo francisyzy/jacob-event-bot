@@ -9,7 +9,8 @@ import { printBotInfo } from "./utils/consolePrintUsername";
 import bot from "./lib/bot";
 import helper from "./commands/helper";
 import catchAll from "./commands/catch-all";
-import { notifyEvent } from "./utils/checkJacob";
+import { notifyJacob } from "./utils/checkJacob";
+import { notifyFetchur } from "./utils/checkFetchur";
 import { schedule } from "node-cron";
 
 //Production Settings
@@ -53,13 +54,19 @@ if (process.env.NODE_ENV === "production") {
 }
 
 helper();
-//https://crontab.guru/#45_0-23_*_*_*
+//https://crontab.guru/#14_*_*_*_*
 schedule("14 * * * *", () => {
   console.log(new Date());
   console.log(new Date().toString());
-  notifyEvent();
+  notifyJacob();
 });
-notifyEvent();
+https://crontab.guru/#15_13_*_*_*
+schedule("15 13 * * *", () => {
+  console.log(new Date());
+  console.log(new Date().toString());
+  notifyFetchur();
+});
+notifyJacob();
 
 //Catch all unknown messages/commands
 catchAll();

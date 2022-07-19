@@ -9,8 +9,8 @@ import bot from "../lib/bot";
 import config from "../config";
 import { events } from "../types";
 
-export async function notifyEvent(): Promise<void> {
-  console.log("Notifying events");
+export async function notifyJacob(): Promise<void> {
+  console.log("Notifying jacob");
   const events = (await got(
     "https://raw.githubusercontent.com/francisyzy/data-skyblock/gh-pages/jacob-events.min.json",
   ).json()) as events;

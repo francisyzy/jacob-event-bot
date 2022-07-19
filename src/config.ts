@@ -10,6 +10,7 @@ const config = {
   URL: process.env.URL,
   eventBuffer: 5,
   JACOB_TG_CHANNEL_ID: process.env.JACOB_TG_CHANNEL_ID || "",
+  FETCHUR_TG_CHANNEL_ID: process.env.FETCHUR_TG_CHANNEL_ID || "@hysb_fetchur",
 };
 
 export default config;
