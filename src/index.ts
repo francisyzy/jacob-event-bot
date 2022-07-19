@@ -9,7 +9,7 @@ import { printBotInfo } from "./utils/consolePrintUsername";
 import bot from "./lib/bot";
 import helper from "./commands/helper";
 import catchAll from "./commands/catch-all";
-import { notifyEvent } from "./utils/checkEvents";
+import { notifyEvent } from "./utils/checkJacob";
 import { schedule } from "node-cron";
 
 //Production Settings
