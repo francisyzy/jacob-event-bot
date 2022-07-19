@@ -60,13 +60,13 @@ schedule("14 * * * *", () => {
   console.log(new Date().toString());
   notifyJacob();
 });
-https://crontab.guru/#15_13_*_*_*
+//https://crontab.guru/#15_13_*_*_*
 schedule("15 13 * * *", () => {
   console.log(new Date());
   console.log(new Date().toString());
   notifyFetchur();
 });
-notifyJacob();
+// notifyJacob();
 
 //Catch all unknown messages/commands
 catchAll();
