@@ -6,7 +6,7 @@ import { fetchur } from "../types";
 export async function notifyFetchur(): Promise<void> {
   console.log("Notifying fetchur");
   const fetchur = (await got(
-    "https://raw.githubusercontent.com/francisyzy/data-skyblock/gh-pages/fetchur.min.json",
+    "https://raw.githubusercontent.com/francisyzy/data-skyblock/gh-pages/fetchur-events.min.json",
   ).json()) as fetchur;
   //Sends notification out
   if (fetchur.day.includes(convDayString(new Date().getDay()))) {

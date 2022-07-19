@@ -67,6 +67,7 @@ schedule("15 13 * * *", () => {
   notifyFetchur();
 });
 // notifyJacob();
+// notifyFetchur();
 
 //Catch all unknown messages/commands
 catchAll();
