@@ -12,15 +12,22 @@ export async function notifyFetchur(): Promise<void> {
   if (fetchur.day.includes(convDayString(new Date().getDay()))) {
     bot.telegram.sendMessage(
       config.FETCHUR_TG_CHANNEL_ID,
-      `Fetchur's <b>${fetchur.day}</b>: ${fetchur.item}`,
-      { parse_mode: "HTML" },
-    );
-  } else {
-    bot.telegram.sendMessage(
-      config.FETCHUR_TG_CHANNEL_ID,
-      `<i>Unable to get fetchur's quest as the <a href="https://hypixel-skyblock.fandom.com/wiki/Fetchur">Wiki</a> is yet to be updated</i>`,
+      `Fetchur's <b>${fetchur.day}</b>: <a href:"${fetchur.url}">${fetchur.item}</a>`,
       { parse_mode: "HTML", disable_web_page_preview: true },
     );
+  } else {
+    // bot.telegram.sendMessage(
+    //   config.FETCHUR_TG_CHANNEL_ID,
+    //   `<i>Unable to get fetchur's quest as the <a href="https://hypixel-skyblock.fandom.com/wiki/Fetchur">Wiki</a> is yet to be updated</i>`,
+    //   {
+    //     parse_mode: "HTML",
+    //     disable_web_page_preview: true,
+    //     disable_notification: true,
+    //   },
+    // );
+    setTimeout(async () => {
+      await notifyFetchur();
+    }, 3600000);
   }
 }
 
