@@ -53,7 +53,7 @@ export async function notifyJacob(): Promise<void> {
     bot.telegram.sendMessage(
       config.JACOB_TG_CHANNEL_ID,
       `Jacob's Farming Contest is starting soon. <i>Unable to get crops as the <a href="https://hypixel-skyblock.fandom.com/wiki/Jacob%27s_Farming_Contest/Events">Wiki</a> is yet to be updated</i>`,
-      { parse_mode: "HTML", disable_web_page_preview: true },
+      { parse_mode: "HTML", disable_web_page_preview: true, disable_notification: true },
     );
   }
 }
