@@ -1,11 +1,11 @@
 {
   "name": "jacob-event-bot",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Updates when there is an event happening",
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "build": "npm run generate && npm run deploy && tsc -p .",
+    "build": "tsc -p .",
     "dev": "nodemon src/index.ts"
   },
   "repository": {
