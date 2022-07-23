@@ -12,7 +12,7 @@ export async function notifyFetchur(): Promise<void> {
   if (fetchur.day.includes(convDayString(new Date().getDay()))) {
     bot.telegram.sendMessage(
       config.FETCHUR_TG_CHANNEL_ID,
-      `Fetchur's <b>${fetchur.day}</b>: <a href:"${fetchur.url}">${fetchur.item}</a>`,
+      `Fetchur's <b>${fetchur.day}</b>: <a href="${fetchur.url}">${fetchur.item}</a>`,
       { parse_mode: "HTML", disable_web_page_preview: true },
     );
   } else {
