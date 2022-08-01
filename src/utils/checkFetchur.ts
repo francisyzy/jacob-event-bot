@@ -10,11 +10,13 @@ export async function notifyFetchur(): Promise<void> {
   ).json()) as fetchur;
   //Sends notification out
   if (fetchur.day.includes(convDayString(new Date().getDay()))) {
-    bot.telegram.sendMessage(
+    const fetchurMsg = await bot.telegram.sendMessage(
       config.FETCHUR_TG_CHANNEL_ID,
       `Fetchur's <b>${fetchur.day}</b>: <a href="${fetchur.url}">${fetchur.item}</a>`,
       { parse_mode: "HTML", disable_web_page_preview: true },
     );
+    bot.telegram.unpinAllChatMessages(config.FETCHUR_TG_CHANNEL_ID);
+    bot.telegram.pinChatMessage(config.FETCHUR_TG_CHANNEL_ID, fetchurMsg.message_id)
   } else {
     // bot.telegram.sendMessage(
     //   config.FETCHUR_TG_CHANNEL_ID,
