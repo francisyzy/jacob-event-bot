@@ -11,6 +11,7 @@ import helper from "./commands/helper";
 import catchAll from "./commands/catch-all";
 import { notifyJacob } from "./utils/checkJacob";
 import { notifyFetchur } from "./utils/checkFetchur";
+import { notifySBEvents } from "./utils/sbEvents";
 import { schedule } from "node-cron";
 
 //Production Settings
@@ -55,6 +56,24 @@ if (process.env.NODE_ENV === "production") {
 }
 
 helper();
+//https://crontab.guru/#15_*_*_*_*
+schedule("15 * * * *", () => {
+  console.log(new Date());
+  console.log(new Date().toString());
+  notifySBEvents();
+});
+//https://crontab.guru/#55_*_*_*_*
+schedule("55 * * * *", () => {
+  console.log(new Date());
+  console.log(new Date().toString());
+  notifySBEvents();
+});
+//https://crontab.guru/#35_*_*_*_*
+schedule("35 * * * *", () => {
+  console.log(new Date());
+  console.log(new Date().toString());
+  notifySBEvents();
+});
 //https://crontab.guru/#14_*_*_*_*
 schedule("14 * * * *", () => {
   console.log(new Date());
