@@ -1,4 +1,9 @@
-import { addMinutes, isWithinInterval, subMinutes } from "date-fns";
+import {
+  addMinutes,
+  formatDistanceToNow,
+  isWithinInterval,
+  subMinutes,
+} from "date-fns";
 import bot from "../lib/bot";
 import config from "../config";
 
@@ -218,7 +223,14 @@ export async function notifySBEvents(): Promise<void> {
       // console.log(`<a href="https://hypixel-skyblock.fandom.com/wiki/Special:Search?query=${event.eventName}">${event.eventName}</a> is starting now`);
       await bot.telegram.sendMessage(
         config.EVENT_TG_CHANNEL_ID,
-        `<a href="https://hypixel-skyblock.fandom.com/wiki/Special:Search?query=${event.eventName}">${event.eventName}</a> is starting now`,
+        `<a href="https://hypixel-skyblock.fandom.com/wiki/Special:Search?query=${
+          event.eventName
+        }">${
+          event.eventName
+        }</a> is starting now. It will end in ${formatDistanceToNow(
+          event.TimeLeft,
+          { addSuffix: true },
+        )}`,
         { parse_mode: "HTML", disable_web_page_preview: true },
       );
     }
