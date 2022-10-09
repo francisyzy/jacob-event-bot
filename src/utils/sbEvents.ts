@@ -228,7 +228,7 @@ export async function notifySBEvents(): Promise<void> {
         }">${
           event.eventName
         }</a> is starting now. It will end in ${formatDistanceToNow(
-          event.TimeLeft,
+          event.end,
           { addSuffix: true },
         )}`,
         { parse_mode: "HTML", disable_web_page_preview: true },
