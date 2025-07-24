@@ -75,11 +75,11 @@ schedule("35 * * * *", () => {
   notifySBEvents();
 });
 //https://crontab.guru/#14_*_*_*_*
-schedule("14 * * * *", () => {
-  console.log(new Date());
-  console.log(new Date().toString());
-  notifyJacob();
-});
+// schedule("14 * * * *", () => {
+//   console.log(new Date());
+//   console.log(new Date().toString());
+  // notifyJacob();
+// });
 //https://crontab.guru/#15_13_*_*_*
 schedule("15 13 * * *", () => {
   console.log(new Date());
